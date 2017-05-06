@@ -8,5 +8,8 @@ router.get('/', Action.listar)
 router.post('/', (req, res) => {
   Action.cadastrar(req, res)
 })
+router.put('/:id', (req, res) => {
+  Action.editar(req, res)
+})
 
 module.exports = router
