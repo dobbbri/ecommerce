@@ -1,13 +1,10 @@
 'use strict'
 const express = require('express')
 const router = express.Router()
-const Product = require('../models/product')
+const Actions = require('../controller/actions')
 
 router.get('/', (req, res, next) => {
-  Product.find({}, (err, data) => {
-    if (err) return console.log('Um erro foi encontrado', err)
-    return console.log('operação realizada com sucesso', data)
-  })
+  Actions.listar(req, res)
 })
 
 module.exports = router
