@@ -3,14 +3,12 @@ const express = require('express')
 const router = express.Router()
 const Action = require('../controller/actions')
 
-router.get('/', Action.listar)
+router.post('/', Action.create)
 
-router.post('/', Action.cadastrar)
+router.get('/', Action.retrieve)
 
-router.put('/:id', (req, res) => {
-  Action.editar(req, res)
-})
-router.delete('/:id', (req, res) => {
-  Action.remover(req, res)
-})
+router.put('/:id', Action.update)
+
+router.delete('/:id', Action.delete)
+
 module.exports = router
