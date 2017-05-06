@@ -1,10 +1,12 @@
 'use strict'
 const express = require('express')
 const router = express.Router()
-const Actions = require('../controller/actions')
+const Action = require('../controller/actions')
 
-router.get('/', (req, res, next) => {
-  Actions.listar(req, res)
+router.get('/', Action.listar)
+
+router.post('/', (req, res) => {
+  Action.cadastrar(req, res)
 })
 
 module.exports = router
